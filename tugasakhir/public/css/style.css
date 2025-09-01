@@ -1,0 +1,225 @@
+body {
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 80px; 
+  min-height: 100vh;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url('../images/monas.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 80px 20px;
+  height: 400px;
+  filter: opacity(0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay gelap */
+  z-index: -1;
+}
+
+.hero-section h1 {
+  font-size: 46px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-section h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Navbar */
+.custom-navbar {
+  background-color: #7a0000; /* merah tua */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.custom-navbar .nav-link {
+  font-size: 0.9rem;
+  margin-left: 20px;
+  color: #fff !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ffcccc !important; /* efek hover merah muda */
+}
+
+/* Sticky Navbar */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+/* Card Logo */
+.card-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.bg-red {
+  background-color: #7a0000 !important; /* merah tua */
+  color: #fff !important;
+}
+
+.btn-red {
+  background-color: #7a0000 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.btn-red:hover {
+  background-color: #a30000 !important; /* merah lebih terang */
+  color: #fff !important;
+}
+
+/* Dashboard Stats Cards */
+.stat-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  height: 400px; /* Fixed height */
+}
+
+.dashboard-card .card-header {
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+.dashboard-card .card-body {
+  height: calc(100% - 65px); /* Adjust for header */
+  overflow: hidden;
+}
+
+/* Dashboard Iframes */
+.dashboard-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Background Colors */
+.bg-red {
+  background: linear-gradient(135deg, #7a0000 0%, #a30000 100%);
+}
+
+.bg-success {
+  background: linear-gradient(135deg, #28a745 0%, #34ce57 100%);
+}
+
+.bg-warning {
+  background: linear-gradient(135deg, #ffc107 0%, #ffcd39 100%);
+}
+
+.bg-info {
+  background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-card {
+    height: 350px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card, .dashboard-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered animation delay */
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.dashboard-card:nth-child(1) { animation-delay: 0.5s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.6s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.7s; }
+.dashboard-card:nth-child(4) { animation-delay: 0.8s; }
